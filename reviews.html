@@ -249,45 +249,36 @@ window.saveReview = async function () {
   const name = document.getElementById("name").value.trim();
   const text = document.getElementById("reviewText").value.trim();
 
-  console.log("Name:", name);
-  console.log("Text:", text);
-  console.log("Rating:", selectedRating);
-alert("NEW CODE RUNNING");
-  
   if (!name || !text || selectedRating === 0) {
     alert("Please complete all fields.");
     return;
   }
 
   try {
-console.log("ENTERED TRY BLOCK");
-alert("ENTERED TRY BLOCK");
-   console.log("ABOUT TO WRITE TO FIREBASE");
-alert("ABOUT TO WRITE TO FIREBASE");
-    const docRef = await addDoc(collection(db, "reviews"), {
-      name: name,
-      text: text,
+
+    const promise = addDoc(collection(db, "reviews"), {
+      name,
+      text,
       rating: selectedRating,
       time: serverTimestamp()
     });
 
-    console.log("SUCCESS ID:", docRef.id);
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("Firebase timeout after 10 seconds")), 10000)
+    );
 
-    alert("Review saved successfully!");
+    const docRef = await Promise.race([promise, timeout]);
 
-    document.getElementById("name").value = "";
-    document.getElementById("reviewText").value = "";
-
-    stars.forEach(s => s.classList.remove("active"));
-    selectedRating = 0;
+    alert("SUCCESS: " + docRef.id);
 
   } catch (error) {
 
-    console.error("FIREBASE ERROR:", error);
-
     alert(
-      error.code + "\n\n" + error.message
+      "ERROR:\n\n" +
+      error.message
     );
+
+    console.error(error);
   }
 };
 const reviewList = document.getElementById("reviewList");

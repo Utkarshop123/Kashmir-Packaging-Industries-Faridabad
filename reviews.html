@@ -254,32 +254,38 @@ window.saveReview = async function () {
     return;
   }
 
-  try {
+  console.log("Writing review...");
 
-    const promise = addDoc(collection(db, "reviews"), {
-      name,
-      text,
-      rating: selectedRating,
-      time: serverTimestamp()
-    });
+  addDoc(collection(db, "reviews"), {
+    name: name,
+    text: text,
+    rating: selectedRating,
+    time: serverTimestamp()
+  })
+  .then((docRef) => {
 
-    const timeout = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("Firebase timeout after 10 seconds")), 10000)
-    );
+    console.log("SUCCESS ID:", docRef.id);
 
-    const docRef = await Promise.race([promise, timeout]);
+    alert("Review Saved!");
 
-    alert("SUCCESS: " + docRef.id);
+    document.getElementById("name").value = "";
+    document.getElementById("reviewText").value = "";
 
-  } catch (error) {
+    stars.forEach(s => s.classList.remove("active"));
+    selectedRating = 0;
+
+  })
+  .catch((error) => {
+
+    console.error("FIREBASE ERROR:", error);
 
     alert(
-      "ERROR:\n\n" +
+      error.code + "\n\n" +
       error.message
     );
 
-    console.error(error);
-  }
+  });
+
 };
 const reviewList = document.getElementById("reviewList");
 

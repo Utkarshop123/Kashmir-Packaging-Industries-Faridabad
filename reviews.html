@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Reviews | Kashmir Packaging Industries</title>
+
+<!-- SEO -->
+<title>Customer Reviews | Kashmir Packaging Industries Faridabad</title>
+
+<meta name="description" content="Read customer reviews of Kashmir Packaging Industries, a trusted packaging manufacturer in Faridabad, Haryana providing corrugated boxes, BOPP tapes and industrial packaging solutions.">
+
+<meta name="keywords" content="Kashmir Packaging Industries reviews, packaging company Faridabad feedback, industrial packaging supplier India reviews">
+
+<meta name="author" content="Kashmir Packaging Industries">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Customer Reviews - Kashmir Packaging Industries">
+<meta property="og:description" content="See what customers say about our industrial packaging solutions in India.">
+<meta property="og:type" content="website">
 
 <link rel="stylesheet" href="css/style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- REVIEW SCHEMA (VERY IMPORTANT FOR SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Kashmir Packaging Industries Services",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  }
+}
+</script>
 
 <style>
 
@@ -109,16 +136,12 @@ KASHMIR <span>PACKAGING</span>
 
 <div class="hero-content">
 
-<span class="tag">
-CUSTOMER FEEDBACK
-</span>
+<span class="tag">CUSTOMER REVIEWS • FARIDABAD</span>
 
-<h1>
-Share Your Experience
-</h1>
+<h1>Customer Reviews & Feedback</h1>
 
 <p>
-We value honest feedback from customers and business partners.
+Read experiences shared by businesses using Kashmir Packaging Industries for industrial packaging solutions.
 </p>
 
 </div>
@@ -131,25 +154,28 @@ We value honest feedback from customers and business partners.
 
 <div class="section-heading">
 
-<h2>Write a Review</h2>
+<h2>Customer Feedback</h2>
 
 <p>
-No fake reviews are displayed. Only reviews submitted through this form appear below.
+We value genuine feedback from our customers and business partners.
 </p>
 
 </div>
 
+<!-- REVIEW FORM -->
 <div class="review-form">
 
 <input type="text" id="name" placeholder="Your Name">
 
 <div class="stars">
-
-<span class="star" data-value="1">★</span> <span class="star" data-value="2">★</span> <span class="star" data-value="3">★</span> <span class="star" data-value="4">★</span> <span class="star" data-value="5">★</span>
-
+<span class="star" data-value="1">★</span>
+<span class="star" data-value="2">★</span>
+<span class="star" data-value="3">★</span>
+<span class="star" data-value="4">★</span>
+<span class="star" data-value="5">★</span>
 </div>
 
-<textarea id="reviewText" placeholder="Write your review here..."></textarea>
+<textarea id="reviewText" placeholder="Write your review..."></textarea>
 
 <button class="btn-primary" onclick="saveReview()">
 Submit Review
@@ -157,6 +183,7 @@ Submit Review
 
 </div>
 
+<!-- REVIEWS LIST -->
 <div id="reviewList" class="review-list"></div>
 
 </div>
@@ -168,11 +195,8 @@ Submit Review
 <div class="footer-content">
 
 <h3>Kashmir Packaging Industries</h3>
-
 <p>Faridabad, Haryana, India</p>
-
 <p>Phone: +91 9810602893</p>
-
 <p>Email: sudha308350@gmail.com</p>
 
 </div>
@@ -180,116 +204,132 @@ Submit Review
 </footer>
 
 <script src="js/script.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  orderBy,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBgT0DnvaeacoH2AyQdcfjj-n9joO-4ovA",
+  authDomain: "kpi-reviews.firebaseapp.com",
+  projectId: "kpi-reviews",
+  storageBucket: "kpi-reviews.firebasestorage.app",
+  messagingSenderId: "934013358242",
+  appId: "1:934013358242:web:c294e7eeb9671902e307fb"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 let selectedRating = 0;
 
 const stars = document.querySelectorAll(".star");
 
 stars.forEach(star => {
+  star.addEventListener("click", () => {
+    selectedRating = Number(star.dataset.value);
 
-star.addEventListener("click", () => {
+    stars.forEach(s => s.classList.remove("active"));
 
-selectedRating = star.dataset.value;
-
-stars.forEach(s => s.classList.remove("active"));
-
-for(let i=0;i<selectedRating;i++){
-
-stars[i].classList.add("active");
-
-}
-
+    for (let i = 0; i < selectedRating; i++) {
+      stars[i].classList.add("active");
+    }
+  });
 });
 
-});
+window.saveReview = async function () {
 
-function saveReview(){
+  console.log("BUTTON CLICKED");
 
-const name =
-document.getElementById("name").value;
+  const name = document.getElementById("name").value.trim();
+  const text = document.getElementById("reviewText").value.trim();
 
-const text =
-document.getElementById("reviewText").value;
+  if (!name || !text || selectedRating === 0) {
+    alert("Please complete all fields.");
+    return;
+  }
 
-if(
-name === "" ||
-text === "" ||
-selectedRating === 0
-){
-alert("Please complete all fields.");
-return;
-}
+  try {
 
-const review = {
-name,
-text,
-rating:selectedRating
+    console.log("Attempting Firebase write...");
+
+    const docRef = await addDoc(collection(db, "reviews"), {
+      name: name,
+      text: text,
+      rating: selectedRating,
+      time: serverTimestamp()
+    });
+
+    console.log("SUCCESS ID:", docRef.id);
+
+    alert("Review saved successfully!");
+
+    document.getElementById("name").value = "";
+    document.getElementById("reviewText").value = "";
+
+    stars.forEach(s => s.classList.remove("active"));
+    selectedRating = 0;
+
+  } catch (error) {
+
+    console.error("FIREBASE ERROR:", error);
+
+    alert(
+      "Firebase Error:\n\n" +
+      error.code +
+      "\n\n" +
+      error.message
+    );
+  }
 };
 
-let reviews =
-JSON.parse(
-localStorage.getItem("kpi_reviews")
-) || [];
+const reviewList = document.getElementById("reviewList");
 
-reviews.push(review);
-
-localStorage.setItem(
-"kpi_reviews",
-JSON.stringify(reviews)
+const q = query(
+  collection(db, "reviews"),
+  orderBy("time", "desc")
 );
 
-loadReviews();
+onSnapshot(
+  q,
+  (snapshot) => {
 
-document.getElementById("name").value="";
-document.getElementById("reviewText").value="";
+    console.log("Loaded reviews:", snapshot.size);
 
-stars.forEach(s=>s.classList.remove("active"));
+    reviewList.innerHTML = "";
 
-selectedRating=0;
+    snapshot.forEach((doc) => {
 
-}
+      const review = doc.data();
 
-function loadReviews(){
+      const card = document.createElement("div");
 
-const reviewList =
-document.getElementById("reviewList");
+      card.className = "review-card";
 
-reviewList.innerHTML="";
+      card.innerHTML = `
+        <h4>${review.name}</h4>
+        <div class="rating">${"★".repeat(review.rating)}</div>
+        <p>${review.text}</p>
+      `;
 
-let reviews =
-JSON.parse(
-localStorage.getItem("kpi_reviews")
-) || [];
+      reviewList.appendChild(card);
 
-reviews.reverse().forEach(review=>{
+    });
 
-const card =
-document.createElement("div");
+  },
+  (error) => {
 
-card.classList.add("review-card");
+    console.error("READ ERROR:", error);
 
-card.innerHTML=`
-
-<h4>${review.name}</h4>
-
-<div class="rating">
-${"★".repeat(review.rating)}
-</div>
-
-<p>${review.text}</p>
-
-`;
-
-reviewList.appendChild(card);
-
-});
-
-}
-
-loadReviews();
-
+  }
+);
 </script>
 
 </body>

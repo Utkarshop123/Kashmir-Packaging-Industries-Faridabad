@@ -246,50 +246,30 @@ stars.forEach(star => {
 
 window.saveReview = async function () {
 
-  console.log("BUTTON CLICKED");
-
-  const name = document.getElementById("name").value.trim();
-  const text = document.getElementById("reviewText").value.trim();
-
-  if (!name || !text || selectedRating === 0) {
-    alert("Please complete all fields.");
-    return;
-  }
-
   try {
 
-    console.log("Attempting Firebase write...");
-
     const docRef = await addDoc(collection(db, "reviews"), {
-      name: name,
-      text: text,
-      rating: selectedRating,
+      name: "TEST USER",
+      text: "TEST REVIEW",
+      rating: 5,
       time: serverTimestamp()
     });
 
-    console.log("SUCCESS ID:", docRef.id);
-
-    alert("Review saved successfully!");
-
-    document.getElementById("name").value = "";
-    document.getElementById("reviewText").value = "";
-
-    stars.forEach(s => s.classList.remove("active"));
-    selectedRating = 0;
+    alert("SUCCESS: " + docRef.id);
 
   } catch (error) {
 
-    console.error("FIREBASE ERROR:", error);
-
     alert(
-      "Firebase Error:\n\n" +
+      "ERROR:\n\n" +
       error.code +
       "\n\n" +
       error.message
     );
-  }
-};
 
+    console.error(error);
+  }
+
+};
 const reviewList = document.getElementById("reviewList");
 
 const q = query(

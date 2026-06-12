@@ -248,13 +248,20 @@ window.saveReview = async function () {
 
   try {
 
-    const docRef = await addDoc(collection(db, "reviews"), {
-      name: "TEST USER",
-      text: "TEST REVIEW",
-      rating: 5,
-      time: serverTimestamp()
-    });
-
+    addDoc(collection(db, "reviews"), {
+  name: name,
+  text: text,
+  rating: selectedRating,
+  time: serverTimestamp()
+})
+.then((docRef) => {
+  console.log("SUCCESS ID:", docRef.id);
+  alert("Saved!");
+})
+.catch((error) => {
+  console.error("FULL ERROR:", error);
+  alert(error.code + "\n\n" + error.message);
+});
     alert("SUCCESS: " + docRef.id);
 
   } catch (error) {

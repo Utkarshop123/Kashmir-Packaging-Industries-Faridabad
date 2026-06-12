@@ -260,7 +260,10 @@ alert("NEW CODE RUNNING");
   }
 
   try {
-
+console.log("ENTERED TRY BLOCK");
+alert("ENTERED TRY BLOCK");
+   console.log("ABOUT TO WRITE TO FIREBASE");
+alert("ABOUT TO WRITE TO FIREBASE");
     const docRef = await addDoc(collection(db, "reviews"), {
       name: name,
       text: text,

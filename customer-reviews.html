@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Customer Reviews | Kashmir Packaging Industries Faridabad</title>
+
+<meta name="description" content="Read customer reviews of Kashmir Packaging Industries, a trusted packaging manufacturer in Faridabad, Haryana providing corrugated boxes, BOPP tapes and industrial packaging solutions.">
+
+<meta name="keywords" content="Kashmir Packaging Industries reviews, packaging company Faridabad feedback, industrial packaging supplier India reviews">
+
+<meta name="author" content="Kashmir Packaging Industries">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Customer Reviews - Kashmir Packaging Industries">
+<meta property="og:description" content="See what customers say about our industrial packaging solutions in India.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- REVIEW SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kashmir Packaging Industries",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  }
+}
+</script>
+
+<style>
+
+.review-container{
+max-width:1000px;
+margin:auto;
+}
+
+.review-form{
+background:var(--card);
+padding:35px;
+border-radius:20px;
+box-shadow:var(--shadow);
+margin-bottom:40px;
+}
+
+.review-form input,
+.review-form textarea{
+width:100%;
+padding:14px;
+margin-top:10px;
+margin-bottom:20px;
+border:none;
+border-radius:12px;
+background:var(--bg-light);
+color:white;
+}
+
+.review-form textarea{
+min-height:140px;
+resize:vertical;
+}
+
+.stars{
+font-size:32px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+.star{
+color:#666;
+transition:.3s;
+}
+
+.star.active{
+color:gold;
+}
+
+.review-list{
+display:grid;
+gap:20px;
+}
+
+.review-card{
+background:var(--card);
+padding:25px;
+border-radius:18px;
+box-shadow:var(--shadow);
+}
+
+.review-card h4{
+margin-bottom:10px;
+}
+
+.review-card .rating{
+color:gold;
+margin-bottom:10px;
+}
+
+.review-card p{
+color:var(--muted);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+KASHMIR <span>PACKAGING</span>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about-us.html">About</a>
+<a href="our-products.html">Products</a>
+<a href="place-order.html">Order</a>
+<a href="customer-reviews.html" class="active">Reviews</a>
+<a href="contact-us.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero" style="min-height:60vh; background: linear-gradient(rgba(11,14,17,0.8), rgba(11,14,17,0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
+
+<div class="hero-content">
+
+<span class="tag">CUSTOMER REVIEWS • FARIDABAD</span>
+
+<h1>Customer Reviews & Feedback</h1>
+
+<p>
+Read experiences shared by businesses using Kashmir Packaging Industries for industrial packaging solutions.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="review-container">
+
+<div class="section-heading">
+
+<h2>Customer Feedback</h2>
+
+<p>
+We value genuine feedback from our customers and business partners.
+</p>
+
+</div>
+
+<!-- REVIEW FORM -->
+<div class="review-form">
+
+<input type="text" id="name" placeholder="Your Name">
+
+<div class="stars">
+<span class="star" data-value="1">★</span>
+<span class="star" data-value="2">★</span>
+<span class="star" data-value="3">★</span>
+<span class="star" data-value="4">★</span>
+<span class="star" data-value="5">★</span>
+</div>
+
+<textarea id="reviewText" placeholder="Write your review..."></textarea>
+
+<button class="btn-primary" onclick="saveReview()">
+Submit Review
+</button>
+
+</div>
+
+<!-- REVIEWS LIST -->
+<div id="reviewList" class="review-list"></div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<h3>Kashmir Packaging Industries</h3>
+<p>Faridabad, Haryana, India</p>
+<p>Phone: +91 9810602893</p>
+<p>Email: sudha308350@gmail.com</p>
+
+</div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  orderBy,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBgT0DnvaeacoH2AyQdcfjj-n9joO-4ovA",
+  authDomain: "kpi-reviews.firebaseapp.com",
+  projectId: "kpi-reviews",
+  storageBucket: "kpi-reviews.firebasestorage.app",
+  messagingSenderId: "934013358242",
+  appId: "1:934013358242:web:c294e7eeb9671902e307fb"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let selectedRating = 0;
+
+const stars = document.querySelectorAll(".star");
+
+stars.forEach(star => {
+  star.addEventListener("click", () => {
+
+    selectedRating = Number(star.dataset.value);
+
+    stars.forEach(s => s.classList.remove("active"));
+
+    for (let i = 0; i < selectedRating; i++) {
+      stars[i].classList.add("active");
+    }
+
+  });
+});
+
+window.saveReview = async function () {
+
+  const name = document.getElementById("name").value.trim();
+  const text = document.getElementById("reviewText").value.trim();
+
+  if (!name || !text || selectedRating === 0) {
+    alert("Please complete all fields.");
+    return;
+  }
+
+  try {
+
+    await addDoc(collection(db, "reviews"), {
+      name: name,
+      text: text,
+      rating: selectedRating,
+      time: serverTimestamp()
+    });
+
+    alert("Review saved successfully!");
+
+    document.getElementById("name").value = "";
+    document.getElementById("reviewText").value = "";
+
+    stars.forEach(s => s.classList.remove("active"));
+
+    selectedRating = 0;
+
+  } catch (error) {
+
+    console.error("Firebase Error:", error);
+
+    alert("Error saving review.");
+
+  }
+};
+
+const reviewList = document.getElementById("reviewList");
+
+const q = query(
+  collection(db, "reviews"),
+  orderBy("time", "desc")
+);
+
+onSnapshot(q, (snapshot) => {
+
+  reviewList.innerHTML = "";
+
+  snapshot.forEach((doc) => {
+
+    const review = doc.data();
+
+    const card = document.createElement("div");
+
+    card.className = "review-card";
+
+    card.innerHTML = `
+      <h4>${review.name}</h4>
+      <div class="rating">${"★".repeat(review.rating)}</div>
+      <p>${review.text}</p>
+    `;
+
+    reviewList.appendChild(card);
+
+  });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,50 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+I can do that — below are replace-ready HTML snippets you can paste into each file. I’ll provide exactly what to paste and where (inside <head> or replacing the existing JSON-LD / img tags). Files covered: index.html, about-us.html, our-products.html, contact-us.html, customer-reviews.html, place-order.html.
 
-<head>
-<meta name="google-site-verification" content="jQeqpUc3NaeEgnQOv4iVIj6wSRTUG7uPuYKLeHXJecs" />
+Important: paste head snippets inside the <head> element (replace any existing canonical/OG/twitter/meta/robots lines). Replace the existing JSON-LD block in index.html with the JSON-LD below. For images, replace the <img> tags shown (or add the attributes to the matching images in each file).
+
+1) index.html — canonical + robots + sitemap (replace existing canonical line)
+Paste this inside <head>, replacing:
 <link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries/">
+With:
 
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/">
+<meta name="robots" content="index, follow">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<meta charset="UTF-8">
+2) index.html — Enhanced Open Graph + Twitter (insert after existing og:title/og:description block or replace current OG block)
+Paste this inside <head>:
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO META -->
-<meta name="description"
-content="Kashmir Packaging Industries is a trusted manufacturer of corrugated boxes, BOPP tapes, bubble rolls and industrial packaging solutions in Faridabad, Haryana.">
-
-<meta name="keywords"
-content="packaging company Faridabad, corrugated boxes manufacturer India, BOPP tape supplier, bubble roll packaging, industrial packaging solutions Haryana, Kashmir Packaging Industries">
-
-<meta name="author" content="Kashmir Packaging Industries">
-
-<title>
-Kashmir Packaging Industries | Corrugated Boxes & Packaging Manufacturer Faridabad
-</title>
-
-<!-- Open Graph -->
-<meta property="og:title" content="Kashmir Packaging Industries | Packaging Solutions in Faridabad">
-
-<meta property="og:description"
-content="Manufacturer of corrugated boxes, BOPP tapes, bubble rolls & industrial packaging solutions in India.">
-
+<!-- Enhanced Open Graph + Twitter -->
+<meta property="og:title" content="Kashmir Packaging Industries | Corrugated Boxes & Packaging Manufacturer Faridabad">
+<meta property="og:description" content="Manufacturer of corrugated boxes, BOPP tapes, bubble rolls and industrial packaging solutions in Faridabad, Haryana — bulk orders & custom packaging.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/">
+<meta property="og:site_name" content="Kashmir Packaging Industries">
+<meta property="og:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+<meta property="og:image:alt" content="Kashmir Packaging Industries — Packaging Solutions Faridabad">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kashmir Packaging Industries | Corrugated Boxes & Packaging Manufacturer Faridabad">
+<meta name="twitter:description" content="Manufacturer of corrugated boxes, BOPP tapes & industrial packaging solutions. Call +91 9810602893 for bulk orders.">
+<meta name="twitter:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
 
-<link rel="stylesheet" href="css/style.css">
+3) index.html — Replace JSON-LD LocalBusiness (replace the existing <script type="application/ld+json"> ... </script> block)
+Paste this inside <head> (replacing the old JSON-LD entirely):
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Local Business Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/#business",
   "name": "Kashmir Packaging Industries",
+  "url": "https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/",
+  "logo": "https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png",
   "telephone": "+91 9810602893",
   "email": "sudha308350@gmail.com",
   "address": {
@@ -53,221 +47,97 @@ content="Manufacturer of corrugated boxes, BOPP tapes, bubble rolls & industrial
     "addressRegion": "Haryana",
     "addressCountry": "IN"
   },
-  "description": "Manufacturer of corrugated boxes, BOPP tapes, bubble rolls and industrial packaging materials in India."
+  "description": "Manufacturer of corrugated boxes, BOPP tapes, bubble rolls and industrial packaging materials in India.",
+  "priceRange": "₹₹",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  }]
 }
 </script>
 
-</head>
-
-<body>
-
-<header class="navbar">
-
-<div class="logo">
-KASHMIR <span>PACKAGING</span>
-</div>
-
-<nav>
-<a href="index.html" class="active">Home</a>
-<a href="about-us.html">About</a>
-<a href="our-products.html">Products</a>
-<a href="place-order.html">Order</a>
-<a href="customer-reviews.html">Reviews</a>
-<a href="contact-us.html">Contact</a>
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<span class="tag">
-FARIDABAD • INDUSTRIAL PACKAGING MANUFACTURER
-</span>
-
-<h1>
-Corrugated Boxes & Industrial Packaging Solutions in India
-</h1>
-
-<p>
-Kashmir Packaging Industries is a trusted manufacturer of packaging strips, BOPP tapes,
-bubble rolls, packaging sheets and industrial cutting blades for commercial and industrial use.
-</p>
-
-<div class="hero-buttons">
-
-<a href="our-products.html" class="btn-primary">
-Explore Products
-</a>
-
-<a href="contact-us.html" class="btn-secondary">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="stats">
-
-<div class="stat-card">
-<h2>24/7</h2>
-<p>Production Support</p>
-</div>
-
-<div class="stat-card">
-<h2>Bulk</h2>
-<p>Industrial Supply</p>
-</div>
-
-<div class="stat-card">
-<h2>Fast</h2>
-<p>Order Processing</p>
-</div>
-
-<div class="stat-card">
-<h2>100%</h2>
-<p>Quality Focus</p>
-</div>
-
-</section>
-
-<section class="intro">
-
-<div class="section-heading">
-
-<h2>About Kashmir Packaging Industries</h2>
-
-<p>
-Leading packaging manufacturer in Faridabad providing reliable industrial packaging solutions for traders,
-manufacturers and businesses across India.
-</p>
-
-</div>
-
-<div class="intro-grid">
-
-<div class="intro-card">
-<h3>Quality Manufacturing</h3>
-<p>Durable packaging materials with strict quality standards.</p>
-</div>
-
-<div class="intro-card">
-<h3>Competitive Pricing</h3>
-<p>Cost-effective solutions for bulk industrial orders.</p>
-</div>
-
-<div class="intro-card">
-<h3>Timely Delivery</h3>
-<p>Fast dispatch and reliable supply chain management.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="featured-products">
-
-<div class="section-heading">
-
-<h2>Featured Packaging Products</h2>
-
-<p>
-Explore our most demanded industrial packaging materials.
-</p>
-
-</div>
-
-<div class="product-preview-grid">
-
-<div class="product-box">
-
-<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
-alt="Packaging Strips Industrial Use">
-
-<h3>Packaging Strips</h3>
-
-<p>Heavy-duty strapping solutions for industrial packaging.</p>
-
-</div>
-
-<div class="product-box">
-
-<img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=600&q=80"
-alt="BOPP Tape Roll Packaging">
-
-<h3>BOPP Tapes</h3>
-
-<p>Reliable sealing and packaging applications.</p>
-
-</div>
-
-<div class="product-box">
-
-<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80"
-alt="Bubble Wrap Roll Protection Packaging">
-
-<h3>Bubble Rolls</h3>
-
-<p>Protective cushioning for safe transportation.</p>
-
-</div>
-
-</div>
-
-<div style="text-align:center;margin-top:40px;">
-
-<a href="our-products.html" class="btn-primary">
-View All Products
-</a>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>Need Industrial Packaging Solutions in Faridabad?</h2>
-
-<p>
-Contact Kashmir Packaging Industries for bulk orders and custom packaging solutions.
-</p>
-
-<div class="cta-buttons">
-
-<a href="tel:+919810602893" class="btn-primary">
-Call Now
-</a>
-
-<a href="place-order.html" class="btn-secondary">
-Request Quote
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="footer-content">
-
-<h3>Kashmir Packaging Industries</h3>
-
-<p>Faridabad, Haryana, India</p>
-
-<p>Phone: +91 9810602893</p>
-
-<p>Email: sudha308350@gmail.com</p>
-
-</div>
-
-</footer>
-
-<script src="js/script.js"></script>
-
-</body>
-
-</html>
+4) index.html — Featured product image replacements (add lazy/decode attributes)
+Find each product image <img src="..."> in index.html and replace with the pattern below (example). Add loading="lazy" decoding="async" fetchpriority="low".
+
+Example replacement:
+
+Before:
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Packaging Strips Industrial Use">
+
+After (paste this):
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Packaging Strips Industrial Use" loading="lazy" decoding="async" fetchpriority="low">
+
+Apply the same attributes to every product/feature image in index.html.
+
+5) our-products.html — canonical + minimal social meta (replace/insert in <head>)
+Paste this inside <head> (replace any existing canonical/og/twitter lines). This is for our-products.html:
+
+<link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/our-products.html">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/our-products.html">
+<meta property="og:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+
+Also: in our-products.html replace product <img> tags like this:
+
+Before:
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Industrial Packaging Straps">
+
+After:
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Industrial Packaging Straps" loading="lazy" decoding="async" fetchpriority="low">
+
+6) about-us.html — canonical + minimal social meta (replace/insert in <head>)
+Paste this inside <head>:
+
+<link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/about-us.html">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/about-us.html">
+<meta property="og:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+
+7) contact-us.html — canonical + minimal social meta (replace/insert in <head>)
+Paste this inside <head>:
+
+<link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/contact-us.html">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/contact-us.html">
+<meta property="og:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+
+8) customer-reviews.html — canonical + minimal social meta (replace/insert in <head>)
+Paste this inside <head>:
+
+<link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/customer-reviews.html">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/customer-reviews.html">
+<meta property="og:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+
+9) place-order.html — canonical + minimal social meta (replace/insert in <head>)
+Paste this inside <head>:
+
+<link rel="canonical" href="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/place-order.html">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/place-order.html">
+<meta property="og:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/favicon.png">
+
+Quick notes / deployment checklist:
+- Update robots.txt and sitemap.xml host URL to https://utkarshop123.github.io/Kashmir-Packaging-Industries-Faridabad/ (these are repo files, update them too).
+- Ensure you replace only the old canonical/OG/twitter/JSON-LD blocks (do not duplicate tags).
+- After deploy, submit the sitemap in Google Search Console and request indexing.
+
+If you want, I can now:
+- Produce the full head-area replace-ready block for any specific file (full <head> content ready to paste), or
+- Create an exact per-file patch for each file you list (I will return only the exact HTML to paste into each file).
+
+Tell me which of these you want next (e.g., full head replacements for index.html + about-us.html + our-products.html + contact-us.html + customer-reviews.html + place-order.html), and I will return only the exact replace-ready head code for each.

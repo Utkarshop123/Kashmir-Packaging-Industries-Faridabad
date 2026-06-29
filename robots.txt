@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
 Sitemap: https://utkarshop123.github.io/Kashmir-Packaging-Industries/sitemap.xml

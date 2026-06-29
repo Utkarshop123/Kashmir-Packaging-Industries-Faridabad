@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/index.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/about.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/about-us.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/products.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/our-products.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/order.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/place-order.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/customer-reviews.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/reviews.html</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/contact.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <loc>https://utkarshop123.github.io/Kashmir-Packaging-Industries/contact-us.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
 </urlset>

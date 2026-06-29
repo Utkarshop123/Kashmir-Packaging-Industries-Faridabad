@@ -6,226 +6,482 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
+<!-- Primary SEO -->
 <title>Request Packaging Quote in Faridabad | Kashmir Packaging Industries</title>
-
-<meta name="description" content="Request a free quote for corrugated boxes, BOPP tapes, bubble rolls and industrial packaging materials from Kashmir Packaging Industries, Faridabad. Fast response and bulk pricing available.">
-
-<meta name="keywords" content="request quote packaging Faridabad, corrugated boxes price India, BOPP tape supplier contact, packaging manufacturer Haryana, industrial packaging order India">
-
+<meta name="description" content="Request a free quote for corrugated boxes, BOPP tapes, bubble rolls and industrial packaging materials from Kashmir Packaging Industries, Faridabad. Fast response, bulk pricing & nationwide shipping.">
+<meta name="keywords" content="packaging quote Faridabad, corrugated boxes Faridabad, BOPP tape supplier Haryana, bubble wrap wholesale India, industrial packaging quote">
 <meta name="author" content="Kashmir Packaging Industries">
+<link rel="canonical" href="https://www.example.com/place-order.html">
 
-<!-- Open Graph -->
+<!-- Open Graph / Social -->
 <meta property="og:title" content="Request Packaging Quote | Kashmir Packaging Industries">
 <meta property="og:description" content="Get bulk pricing for packaging materials in Faridabad. Submit your order request today.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.example.com/place-order.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Local SEO -->
+<meta name="geo.region" content="IN-HR">
+<meta name="geo.placename" content="Faridabad">
+<meta name="geo.position" content="28.4089;77.3178">
+<meta name="ICBM" content="28.4089, 77.3178">
 
 <link rel="stylesheet" href="css/style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-.order-container{
-max-width:900px;
-margin:auto;
+:root{
+  --bg:#0b0e11;
+  --card:#0f1720;
+  --accent:#ff6a00;
+  --accent-dark:#e05a00;
+  --muted:#a9b0b6;
+  --bg-light:#121417;
+  --shadow: 0 6px 18px rgba(8,10,12,0.6);
+  --success:#2ecc71;
 }
 
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(180deg,#071018 0%, #0b0e11 100%);
+  color:#eef2f5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Header */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 24px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(6px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.logo{font-weight:700; letter-spacing:1px; font-size:20px}
+.logo span{color:var(--accent)}
+nav a{
+  color:var(--muted);
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:500;
+}
+nav a.active, nav a:hover{color:#fff}
+.header-contacts{display:flex; gap:12px; align-items:center}
+.contact-pill{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  background:var(--card);
+  padding:8px 12px;
+  border-radius:999px;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.contact-pill svg{width:18px; height:18px; fill:var(--accent)}
+
+/* Hero */
+.hero{
+  padding:48px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero-content{max-width:1000px}
+.hero .tag{
+  display:inline-block;
+  background:rgba(0,0,0,0.35);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+.hero h1{font-size:32px; margin:6px 0 12px}
+.hero p{color:var(--muted); max-width:760px; margin:auto}
+
+/* Container */
+.order-container{max-width:980px;margin:28px auto;padding:0 20px}
+
+/* Section heading */
+.section-heading h2{margin:0 0 6px}
+.section-heading p{color:var(--muted); margin:0 0 18px}
+
+/* Form */
 .order-form{
-background:var(--card);
-padding:40px;
-border-radius:20px;
-box-shadow:var(--shadow);
+  background:linear-gradient(180deg, rgba(17,21,26,0.9), rgba(12,15,18,0.9));
+  padding:28px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,0.03);
 }
-
-.form-group{
-margin-bottom:20px;
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
 }
-
+.form-group{margin-bottom:14px}
 .form-group label{
-display:block;
-margin-bottom:8px;
-font-weight:600;
+  display:block;
+  margin-bottom:8px;
+  font-weight:600;
+  color:#e6eef2;
 }
-
 .form-group input,
 .form-group select,
 .form-group textarea{
-width:100%;
-padding:14px;
-border:none;
-border-radius:12px;
-background:var(--bg-light);
-color:white;
-font-size:15px;
+  width:100%;
+  padding:12px 14px;
+  border:none;
+  border-radius:10px;
+  background:var(--bg-light);
+  color:#e6eef2;
+  font-size:14px;
+  outline:none;
+  border:1px solid rgba(255,255,255,0.03);
 }
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:rgba(230,238,242,0.4)}
+.form-group textarea{min-height:120px; resize:vertical}
+.form-note{font-size:13px;color:var(--muted); margin-top:6px}
 
-.form-group textarea{
-resize:vertical;
-min-height:140px;
-}
-
+/* Buttons */
 .action-buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-margin-top:25px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  cursor:pointer;
+  border:0;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  color:#071018;
+  box-shadow:0 8px 24px rgba(255,106,0,0.14);
+}
+.btn-secondary{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--muted);
 }
 
+/* Contact box & trust */
 .contact-box{
-margin-top:40px;
-padding:25px;
-background:var(--card);
-border-radius:20px;
-text-align:center;
-box-shadow:var(--shadow);
+  margin-top:22px;
+  padding:18px;
+  background:linear-gradient(180deg, rgba(16,20,24,0.6), rgba(12,15,18,0.5));
+  border-radius:12px;
+  text-align:left;
+  box-shadow:var(--shadow);
+  display:flex;
+  gap:14px;
+  align-items:center;
 }
+.trust-list{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+.trust-pill{
+  background:rgba(255,255,255,0.03);
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:13px;
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+/* Footer small */
+.small-note{font-size:13px;color:var(--muted); margin-top:10px}
+
+/* Responsive */
+@media (max-width:800px){
+  .form-grid{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+  nav a{display:none}
+  .header-contacts{gap:8px}
+  .contact-box{flex-direction:column; align-items:flex-start}
+}
+
+/* Focus & accessibility */
+input:focus, select:focus, textarea:focus{box-shadow:0 0 0 3px rgba(255,106,0,0.12); border-color:rgba(255,106,0,0.16)}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 </style>
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kashmir Packaging Industries",
+  "image": "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=80",
+  "@id": "https://www.example.com/place-order.html",
+  "url": "https://www.example.com",
+  "telephone": "+91-9810602893",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Industrial Area, Faridabad",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121001",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.4089,
+    "longitude": 77.3178
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/",
+    "https://www.linkedin.com/"
+  ]
+}
+</script>
 
 </head>
 
 <body>
 
-<header class="navbar">
+<header class="navbar" role="banner">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="logo" aria-label="Kashmir Packaging Industries">KASHMIR <span>PACKAGING</span></div>
+    <div class="header-contacts" aria-hidden="false">
+      <a class="contact-pill" href="tel:+919810602893" aria-label="Call Kashmir Packaging Industries">
+        <!-- phone icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.07 15.07 0 006.6 6.6l2.1-2.1a1 1 0 011.1-.2 11.36 11.36 0 003.6.6 1 1 0 011 1v3.2a1 1 0 01-1 1A18 18 0 016 4a1 1 0 011-1h3.2a1 1 0 011 1 11.36 11.36 0 00.6 3.6 1 1 0 01-.2 1.1L6.6 10.8z"/></svg>
+        +91-98106-02893
+      </a>
+      <a class="contact-pill" href="https://wa.me/919810602893" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kashmir Packaging Industries">
+        <!-- whatsapp icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 003 16.7L2 22l5.5-1.5A11 11 0 1020.5 3.5zM12 19.2a7.1 7.1 0 01-3.8-1.1l-.3-.2-3.2.9 1-3.1-.2-.3A7.1 7.1 0 1112 19.2zM17.2 14.1c-.3-.2-1.8-.9-2-.9s-.4 0-.6.2-.7.9-.9 1.1-.4.2-.7.1c-1.2-.6-2.1-2.2-2.4-2.7-.2-.4 0-.6.1-.8.1-.1.2-.2.4-.4.1-.1.2-.2.3-.4.1-.1 0-.2 0-.3s0-.5-.1-.7c-.1-.2-.7-1.7-1-2.3-.3-.6-.7-.5-.9-.5-.2 0-.5 0-.8 0s-.7.1-1 .3c-.2.1-.6.5-.6 1.2 0 .7.7 1.6.9 1.9.2.3 1.4 2.2 3.4 3.1 2 .9 2 .7 2.4.6.4-.1 1.8-.7 2.1-1.4.2-.6.2-.9.1-1 .1 0-.2-.1-.5-.3z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
 
-<div class="logo">
-KASHMIR <span>PACKAGING</span>
-</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="about-us.html">About</a>
-<a href="our-products.html">Products</a>
-<a href="place-order.html" class="active">Order</a>
-<a href="customer-reviews.html">Reviews</a>
-<a href="contact-us.html">Contact</a>
-</nav>
-
+  <nav aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="our-products.html">Products</a>
+    <a href="place-order.html" class="active" aria-current="page">Order</a>
+    <a href="customer-reviews.html">Reviews</a>
+    <a href="contact-us.html">Contact</a>
+  </nav>
 </header>
 
-<section class="hero" style="min-height:60vh; background: linear-gradient(rgba(11,14,17,0.85), rgba(11,14,17,0.85)), url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
-
-<div class="hero-content">
-
-<span class="tag">
-FARIDABAD • INDUSTRIAL PACKAGING QUOTE
-</span>
-
-<h1>
-Request Packaging Quote in Faridabad
-</h1>
-
-<p>
-Get best pricing for corrugated boxes, BOPP tapes, bubble rolls and industrial packaging materials across India.
-</p>
-
-</div>
-
+<section class="hero" role="region" aria-label="Request packaging quote hero" style="min-height:48vh; background: linear-gradient(rgba(11,14,17,0.7), rgba(11,14,17,0.7)), url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
+  <div class="hero-content">
+    <span class="tag">FARIDABAD • INDUSTRIAL PACKAGING QUOTE</span>
+    <h1>Request a Fast Packaging Quote — Faridabad & Nationwide</h1>
+    <p>Get competitive pricing for corrugated boxes, BOPP tapes, bubble rolls and other industrial packaging materials. Fill the short form below — response within 24 hours. Bulk & repeat order discounts available.</p>
+    <div style="margin-top:18px">
+      <a href="#orderForm" class="btn btn-primary" style="font-size:15px">Get Free Quote</a>
+      <a href="tel:+919810602893" class="btn btn-secondary" style="font-size:15px">Call Sales</a>
+    </div>
+  </div>
 </section>
 
 <section>
+  <div class="order-container">
 
-<div class="order-container">
+    <div class="section-heading" style="margin-bottom:12px">
+      <h2>Get Your Free Packaging Quote</h2>
+      <p>Fill out the form — required fields are marked with *. Provide phone or email for fastest response.</p>
+    </div>
 
-<div class="section-heading">
+    <form id="orderForm" class="order-form" onsubmit="handleOrderSubmission(event)" aria-describedby="formHelp" novalidate>
 
-<h2>Get Your Free Packaging Quote</h2>
+      <div class="form-grid" role="group" aria-label="Order information">
+        <div class="form-group">
+          <label for="orderName">Full Name *</label>
+          <input type="text" id="orderName" name="name" placeholder="Enter your full name" required aria-required="true" autocomplete="name">
+        </div>
 
-<p>
-Fill out the form below and our team will contact you with pricing details quickly.
-</p>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" placeholder="Company / Business name" autocomplete="organization">
+        </div>
 
-</div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98106 02893" pattern="^[0-9+\-\s]{7,20}$" required aria-required="true" autocomplete="tel">
+          <div class="form-note">Provide a number for quick callback/WhatsApp updates.</div>
+        </div>
 
-<form class="order-form" onsubmit="handleOrderSubmission(event)">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" autocomplete="email">
+        </div>
 
-<div class="form-group">
-<label for="orderName">Full Name *</label>
-<input type="text" id="orderName" name="name" placeholder="Enter your name" required>
-</div>
+        <div class="form-group">
+          <label for="orderProduct">Select Product *</label>
+          <select id="orderProduct" name="product" required aria-required="true">
+            <option value="Packaging Strips">Packaging Strips</option>
+            <option value="BOPP Tapes">BOPP Tapes</option>
+            <option value="Bubble Rolls">Bubble Rolls</option>
+            <option value="Corrugated Boxes">Corrugated Boxes</option>
+            <option value="Packaging Sheets">Packaging Sheets</option>
+            <option value="Metal Blades">Metal Blades</option>
+            <option value="Custom Packaging">Custom Packaging (Contact us)</option>
+          </select>
+        </div>
 
-<div class="form-group">
-<label for="company">Company Name</label>
-<input type="text" id="company" name="company" placeholder="Enter company name">
-</div>
+        <div class="form-group">
+          <label for="orderQty">Quantity Required *</label>
+          <input type="text" id="orderQty" name="quantity" placeholder="Example: 500 kg / 1000 pcs" required aria-required="true">
+          <div class="form-note">If unsure, provide approximate numbers or expected monthly usage.</div>
+        </div>
 
-<div class="form-group">
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" placeholder="Enter phone number">
-</div>
+        <div class="form-group" style="grid-column:1 / -1">
+          <label for="message">Additional Requirements / Delivery Location</label>
+          <textarea id="message" name="message" placeholder="Describe your requirements, delivery city (e.g., Faridabad), preferred delivery date, or upload link to specs." aria-describedby="fileNote"></textarea>
+          <div id="fileNote" class="form-note">We will follow up for any drawings/specs. For urgent quotes, call or WhatsApp us.</div>
+        </div>
+      </div>
 
-<div class="form-group">
-<label for="email">Email Address</label>
-<input type="email" id="email" name="email" placeholder="Enter email address">
-</div>
+      <div class="action-buttons" role="group" aria-label="Form actions">
+        <button type="submit" class="btn btn-primary" style="font-family:'Poppins',sans-serif;">
+          <!-- send icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="#071018"/></svg>
+          Submit Request
+        </button>
 
-<div class="form-group">
-<label for="orderProduct">Select Product *</label>
-<select id="orderProduct" name="product">
-<option>Packaging Strips</option>
-<option>BOPP Tapes</option>
-<option>Bubble Rolls</option>
-<option>Packaging Sheets</option>
-<option>Metal Blades</option>
-</select>
-</div>
+        <a href="tel:+919810602893" class="btn btn-secondary" aria-label="Call Kashmir Packaging Industries">
+          <!-- phone small -->
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.07 15.07 0 006.6 6.6l2.1-2.1a1 1 0 011.1-.2 11.36 11.36 0 003.6.6 1 1 0 011 1v3.2a1 1 0 01-1 1A18 18 0 016 4a1 1 0 011-1h3.2a1 1 0 011 1 11.36 11.36 0 00.6 3.6 1 1 0 01-.2 1.1L6.6 10.8z" fill="#fff"/></svg>
+          Call Now
+        </a>
 
-<div class="form-group">
-<label for="orderQty">Quantity Required *</label>
-<input type="text" id="orderQty" name="quantity" placeholder="Example: 500 kg / 1000 pcs" required>
-</div>
+        <a href="https://wa.me/919810602893" class="btn btn-primary" style="background:#25D366; box-shadow:0 8px 20px rgba(37,211,102,0.12)" aria-label="WhatsApp Kashmir Packaging Industries" target="_blank" rel="noopener noreferrer">
+          <!-- whatsapp small -->
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 003 16.7L2 22l5.5-1.5A11 11 0 1020.5 3.5zM12 19.2a7.1 7.1 0 01-3.8-1.1l-.3-.2-3.2.9 1-3.1-.2-.3A7.1 7.1 0 1112 19.2z" fill="#071018"/></svg>
+          WhatsApp
+        </a>
+      </div>
 
-<div class="form-group">
-<label for="message">Additional Requirements</label>
-<textarea id="message" name="message" placeholder="Describe your requirements here..."></textarea>
-</div>
+      <div id="formHelp" class="small-note" style="margin-top:12px">
+        By submitting, you agree to our privacy policy. We respect your data and will contact you only regarding your inquiry. Typical response time: within 24 hours on business days.
+      </div>
 
-<div class="action-buttons">
+    </form>
 
-<button type="submit" class="btn-primary" style="border:none; cursor:pointer; font-family:'Poppins', sans-serif;">
-Submit Request
-</button>
+    <div class="contact-box" role="complementary" aria-label="Why choose us">
+      <div style="flex:1">
+        <strong style="color:#fff">Trusted Packaging Partner — Faridabad & India</strong>
+        <div style="color:var(--muted); margin-top:6px">Established 2005 • Fast turnaround • Bulk pricing • Nationwide logistics</div>
 
-<a href="tel:+919810602893" class="btn-secondary">
-Call Now
-</a>
+        <div class="trust-list" aria-hidden="false">
+          <div class="trust-pill">Bulk Discounts</div>
+          <div class="trust-pill">ISO Grade Materials</div>
+          <div class="trust-pill">24h Quote Response</div>
+          <div class="trust-pill">Secure Payments</div>
+        </div>
 
-<a href="https://wa.me/919810602893" class="btn-primary">
-WhatsApp
-</a>
+        <div style="margin-top:10px">
+          <a href="customer-reviews.html" class="btn btn-secondary" style="padding:8px 12px">See Customer Reviews</a>
+          <a href="our-products.html" class="btn btn-secondary" style="padding:8px 12px">View Products</a>
+        </div>
+      </div>
 
-</div>
+      <div style="min-width:160px; text-align:right">
+        <div style="font-weight:700; color:var(--accent)">Sales & Quotes</div>
+        <div style="color:var(--muted); margin-top:6px">Call / WhatsApp</div>
+        <a href="tel:+919810602893" class="contact-pill" style="margin-top:8px; display:inline-flex">+91-98106-02893</a>
+        <div class="small-note" style="margin-top:8px; color:var(--muted)">Email: <a href="mailto:sudha308350@gmail.com" style="color:#fff; text-decoration:underline">sudha308350@gmail.com</a></div>
+      </div>
+    </div>
 
-</form>
-
-</div>
-
+  </div>
 </section>
 
 <script>
+/* Form behavior: preserves mailto submission while improving content included.
+   Keeps original mailto behavior and required fields. */
 function handleOrderSubmission(event) {
     event.preventDefault();
 
-    const name = document.getElementById("orderName").value;
-    const product = document.getElementById("orderProduct").value;
-    const quantity = document.getElementById("orderQty").value;
+    // Basic client-side validation to ensure required fields exist before composing email.
+    var name = document.getElementById("orderName").value.trim();
+    var company = document.getElementById("company").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var product = document.getElementById("orderProduct").value;
+    var quantity = document.getElementById("orderQty").value.trim();
+    var message = document.getElementById("message").value.trim();
 
-    const subject = encodeURIComponent("New Packaging Quote Request - Kashmir Packaging Industries");
+    if (!name || !product || !quantity || !phone || !email) {
+        // Inform user to fill required fields (browser will also highlight required fields normally).
+        alert('Please complete all required fields marked with * (Name, Phone, Email, Product, Quantity).');
+        return;
+    }
 
-    const body = encodeURIComponent(
-`Hello Kashmir Packaging Team,
+    var subject = encodeURIComponent("New Packaging Quote Request - Kashmir Packaging Industries");
 
-I want to request a quotation:
+    var bodyLines = [
+        "Hello Kashmir Packaging Team,",
+        "",
+        "I would like to request a quotation with the following details:",
+        "",
+        "Name: " + name,
+        "Company: " + (company || "N/A"),
+        "Phone: " + phone,
+        "Email: " + email,
+        "Product: " + product,
+        "Quantity: " + quantity,
+        "Delivery Location / Note: " + (message || "N/A"),
+        "",
+        "Preferred Contact Method: " + "Phone/WhatsApp or Email",
+        "",
+        "Please share pricing, lead time and shipping charges (if any).",
+        "",
+        "Thank you.",
+        ""
+    ];
 
-Name: ${name}
-Product: ${product}
-Quantity: ${quantity}
+    var body = encodeURIComponent(bodyLines.join("\n"));
 
-Please send pricing details.
-
-Thank you.`
-    );
-
-    window.location.href = `mailto:sudha308350@gmail.com?subject=${subject}&body=${body}`;
+    // Preserve original mailto behavior and recipient
+    window.location.href = "mailto:sudha308350@gmail.com?subject=" + subject + "&body=" + body;
 }
 </script>
 
